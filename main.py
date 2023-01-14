@@ -21,7 +21,8 @@ while True:
         print(positions[4])
     cv2.putText(frame, str(fps), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
 
-    cv2.imshow("image", hands_img)
+    # cv2.imshow("image", hands_img) this will not produce selfie mode, so flipped it
+    cv2.imshow('image', cv2.flip(hands_img, 1))
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
